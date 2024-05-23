@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Spring_Application
+jdbc:
+  url: jdbc:postgresql://localhost:5432/postgres
+  username: postgres
+  password: postgres
+server:
+  port: 9000

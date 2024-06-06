@@ -1,15 +1,15 @@
 version: '3.3'
 
 services:
-  tinder-db:
-    image: postgres:9.6
+  data-db:
+    image: postgres:alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'postgres'
-      POSTGRES_DB: 'postgres'
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'dbdata'
+      POSTGRES_DB: 'data'
     ports:
       - '5432:5432'
     volumes:
-      - ../.data/pg96:/var/lib/postgresql/data/
-    container_name: postgres
+      - C:\\studing\\courses\\NIX:/var/lib/postgresql/data/
+    container_name: data

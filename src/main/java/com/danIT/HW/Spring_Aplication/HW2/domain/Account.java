@@ -1,0 +1,52 @@
+package com.danIT.HW.Spring_Aplication.HW2.domain;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.Objects;
+import java.util.UUID;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode(of = "id")
+@Entity
+@Table(name="accounts")
+public class Account extends AbstractEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String number;
+    @Enumerated(EnumType.STRING)
+    private Currency currency;
+
+    private Double balance;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    public Account(Currency currency, Customer customer) {
+        this.currency = currency;
+        this.customer = customer;
+        this.number = UUID.randomUUID().toString();
+        this.balance = 0.0;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", number='" + number + '\'' +
+                ", currency=" + currency +
+                ", balance=" + balance +
+                ", customer=" + customer +
+                '}';
+    }
+}

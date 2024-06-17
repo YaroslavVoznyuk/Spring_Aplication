@@ -1,6 +1,6 @@
-INSERT INTO customers (name, email, age) VALUES ('Ivan Melnik', 'ivenmelnik@gmail.com', 23);
-INSERT INTO customers (name, email, age) VALUES ('Sara Vazovski', 'sarik@gmail.com', 40);
-INSERT INTO customers (name, email, age) VALUES ('Emilia Klark', 'emmy@gmail.com', 21);
+INSERT INTO customers (name, email, age, password, phone_number) VALUES ('Ivan Melnik', 'ivenmelnik@gmail.com', 23, '12', '380684378031');
+INSERT INTO customers (name, email, age, password, phone_number) VALUES ('Sara Vazovski', 'sarik@gmail.com', 40, '13', '380684378032');
+INSERT INTO customers (name, email, age, password, phone_number) VALUES ('Emilia Klark', 'emmy@gmail.com', 21, '14','380684378033' );
 
 INSERT INTO employers (name, address) VALUES ('arasaka', ' Corpo Plaza, Night City');
 INSERT INTO employers (name, address) VALUES ('militech', 'Reconciliation Park');

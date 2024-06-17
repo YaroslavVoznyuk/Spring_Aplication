@@ -1,5 +1,6 @@
 package com.danIT.HW.Spring_Aplication.HW2.domain;
 
+import com.danIT.HW.Spring_Aplication.HW3.domain.AbstractEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import lombok.*;
 @EqualsAndHashCode(of = "id")
 @Entity
 @Table(name="employers")
-public class Employer {
+public class Employer extends AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -7,13 +7,19 @@ CREATE TABLE customers (
                            id INT AUTO_INCREMENT PRIMARY KEY,
                            name VARCHAR(250) NOT NULL,
                            email VARCHAR(250) NOT NULL,
-                           age INT NOT NULL
+                           age INT NOT NULL,
+                           password VARCHAR(250) NOT NULL,
+                           phone_number VARCHAR(250) NOT NULL,
+                           creation_date      TIMESTAMP NULL,
+                           last_modified_date TIMESTAMP NULL
 );
 
 CREATE TABLE employers (
                            id INT AUTO_INCREMENT PRIMARY KEY,
                            name VARCHAR(250) NOT NULL,
-                           address VARCHAR(250) NOT NULL
+                           address VARCHAR(250) NOT NULL,
+                           creation_date      TIMESTAMP NULL,
+                           last_modified_date TIMESTAMP NULL
 );
 
 CREATE TABLE accounts (
@@ -22,11 +28,14 @@ CREATE TABLE accounts (
                           currency VARCHAR(10) NOT NULL,
                           balance DOUBLE NOT NULL,
                           customer_id BIGINT,
+                          creation_date      TIMESTAMP NULL,
+                          last_modified_date TIMESTAMP NULL,
                           CONSTRAINT fk_customer
                               FOREIGN KEY (customer_id)
                                   REFERENCES customers(id)
                                   ON DELETE CASCADE
 );
+
 
 CREATE TABLE customer_employer (
                                    customer_id INT,

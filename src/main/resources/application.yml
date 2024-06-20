@@ -7,6 +7,10 @@ spring:
     name: Spring_Application
 server:
   port: 9000
+  logging:
+    level:
+      org: info
+      com: off
 ---
 
 spring:
@@ -14,12 +18,10 @@ spring:
     active: local
 
 ---
-
-spring:
-  security:
-    user:
-      name: a
-      password: a
+logging:
+  level:
+    root: info
+    com.danIT.HW.Spring_Aplication: info
 
 ---
 spring:

@@ -13,3 +13,11 @@ INSERT INTO accounts (number, currency, balance, customer_id) VALUES ('c41eac72-
 INSERT INTO customer_employer (customer_id, employer_id) VALUES (1, 1);
 INSERT INTO customer_employer (customer_id, employer_id) VALUES (2, 2);
 INSERT INTO customer_employer (customer_id, employer_id) VALUES (3, 3);
+
+INSERT INTO users (user_name, encrypted_password, enabled)
+VALUES ('user', '$2a$10$BXH1wlAJPIMXvjnJTBoRuea4CvZwSs8/Zqz4bDRZBDJ6hxvXoHlqq', TRUE),
+       ('admin', '$2a$10$BXH1wlAJPIMXvjnJTBoRuea4CvZwSs8/Zqz4bDRZBDJ6hxvXoHlqq', TRUE);
+
+INSERT INTO roles (role_name, user_id)
+VALUES ('USER', 1),
+       ('ADMIN', 2);
